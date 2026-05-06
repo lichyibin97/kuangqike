@@ -1,0 +1,56 @@
+baseURL = "https://kuangqike.pages.dev/"
+locale = "zh-CN"
+title = "匡齐客"
+theme = "PaperMod"
+paginate = 10
+enableRobotsTXT = true
+buildDrafts = false
+
+[params]
+  env = "production"
+  author = "匡齐"
+  description = "善于思考，追求真理，也会面对现实去赚取收益。"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  ShowToc = false
+  dateFormat = "2006-01-02"
+
+  [params.homeInfoParams]
+    Title = "匡齐客"
+    Content = "善于思考，追求真理，也会面对现实去赚取收益。来者是客。"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/YOUR_GITHUB"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    name = "文章"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "关于"
+    url = "/about/"
+    weight = 2
+
+  [[menu.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 3
+
+[markup]
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+  [markup.goldmark.renderer]
+    unsafe = true

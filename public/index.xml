@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>匡齐客</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on 匡齐客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 06 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第一篇：为什么要写博客</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;p&gt;这个博客叫匡齐客。&lt;/p&gt;
+&lt;p&gt;来者是客，这是我想传递的态度——不管你是谁，来到这里就是客人，我尽量把东西说清楚。&lt;/p&gt;
+&lt;p&gt;我不打算让这里变成流量工具。我只是需要一个自己的地方，存文章、存图片、存想法。不依赖任何平台，这些东西是我的。&lt;/p&gt;
+&lt;p&gt;我会写什么？大概是这些：AI 的实际使用体验、做事的思考过程、偶尔的生活记录。不一定有规律，但每一篇都是真实的。&lt;/p&gt;
+&lt;p&gt;匡扶正义，齐家治国——这是我名字的意思，也是方向。但我也知道，方向和现实之间需要务实的步骤。这个博客记录这个过程。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>关于</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>about</description>
+    </item>
+  </channel>
+</rss>

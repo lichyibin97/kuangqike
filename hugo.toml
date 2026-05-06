@@ -2,7 +2,8 @@ baseURL = "https://kuangqike.pages.dev/"
 locale = "zh-CN"
 title = "匡齐客"
 theme = "PaperMod"
-paginate = 10
+[pagination]
+  pagerSize = 10
 enableRobotsTXT = true
 buildDrafts = false
 

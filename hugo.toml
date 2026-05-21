@@ -10,7 +10,7 @@ buildDrafts = false
 [params]
   env = "production"
   author = "匡齐"
-  description = "善于思考，追求真理，也会面对现实去赚取收益。"
+  description = "读书、用 AI、做事。把复杂问题想清楚，把想清楚的东西留下来。来者是客。"
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = false
@@ -23,7 +23,7 @@ buildDrafts = false
 
   [params.homeInfoParams]
     Title = "匡齐客"
-    Content = "善于思考，追求真理，也会面对现实去赚取收益。来者是客。"
+    Content = "读书、用 AI、做事。把复杂问题想清楚，把想清楚的东西留下来。来者是客。"
 
   [[params.socialIcons]]
     name = "github"
@@ -40,14 +40,19 @@ buildDrafts = false
     weight = 1
 
   [[menu.main]]
+    name = "归档"
+    url = "/archives/"
+    weight = 2
+
+  [[menu.main]]
     name = "关于"
     url = "/about/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     name = "RSS"
     url = "/index.xml"
-    weight = 3
+    weight = 4
 
 [markup]
   [markup.highlight]

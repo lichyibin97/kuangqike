@@ -1,0 +1,5 @@
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f9c8a446b7314127b854965408a34f6c"}'></script>
+<!-- End Cloudflare Web Analytics -->
+{{- end }}

@@ -18,4 +18,3 @@ summary: "about"
 ### 联系方式
 
 - 公众号：匡齐说
-- GitHub：[YOUR_GITHUB](https://github.com/YOUR_GITHUB)

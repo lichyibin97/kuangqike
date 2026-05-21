@@ -26,10 +26,6 @@ buildDrafts = false
     Content = "读书、用 AI、做事。把复杂问题想清楚，把想清楚的东西留下来。来者是客。"
 
   [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/YOUR_GITHUB"
-
-  [[params.socialIcons]]
     name = "rss"
     url = "/index.xml"
 

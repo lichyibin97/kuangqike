@@ -10,7 +10,7 @@
 
 - 站点名称：匡齐客
 - 作者：匡齐
-- 公众号：匡齐说
+- 邮箱：lichyibin@gmail.com
 - 首页：https://kuangqike.pages.dev/
 - 文章列表：https://kuangqike.pages.dev/posts/
 - 归档：https://kuangqike.pages.dev/archives/

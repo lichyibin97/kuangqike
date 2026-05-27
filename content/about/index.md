@@ -17,4 +17,4 @@ summary: "about"
 
 ### 联系方式
 
-- 公众号：匡齐说
+- 邮箱：lichyibin@gmail.com

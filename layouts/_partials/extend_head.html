@@ -3,3 +3,51 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"f9c8a446b7314127b854965408a34f6c"}'></script>
 <!-- End Cloudflare Web Analytics -->
 {{- end }}
+
+<style>
+  .menu-item-has-children {
+    position: relative;
+  }
+
+  .menu-caret {
+    margin-left: 4px;
+    font-size: 0.9em;
+  }
+
+  .submenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 20;
+    display: none;
+    min-width: 160px;
+    margin-top: 8px;
+    padding: 8px 0;
+    list-style: none;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .submenu li {
+    margin: 0;
+  }
+
+  .submenu a {
+    display: block;
+    padding: 9px 16px;
+    line-height: 1.4;
+    white-space: nowrap;
+  }
+
+  .submenu a:hover {
+    color: var(--theme);
+    background: var(--code-bg);
+  }
+
+  .menu-item-has-children:hover .submenu,
+  .menu-item-has-children:focus-within .submenu {
+    display: block;
+  }
+</style>

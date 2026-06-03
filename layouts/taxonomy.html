@@ -1,0 +1,42 @@
+{{- define "main" }}
+
+{{- if .Title }}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{- if .Description }}
+    <div class="post-description">
+        {{ .Description }}
+    </div>
+    {{- end }}
+</header>
+{{- end }}
+
+<ul class="terms-tags">
+    {{- $type := .Type }}
+    {{- if eq .Title "Categories" }}
+            <li>
+                <a href="{{ "/categories/ai资讯/" | absLangURL }}">AI资讯</a>
+            </li>
+            <li>
+                <a href="{{ "/categories/ai工具/" | absLangURL }}">AI工具</a>
+            </li>
+            <li>
+                <a href="{{ "/categories/思考/" | absLangURL }}">思考</a>
+            </li>
+            <li>
+                <a href="{{ "/categories/合作/" | absLangURL }}">合作</a>
+            </li>
+    {{- else }}
+        {{- range $key, $value := .Data.Terms.Alphabetical }}
+            {{- $name := .Name }}
+            {{- $count := .Count }}
+            {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+            </li>
+        {{- end }}
+    {{- end }}
+    {{- end }}
+</ul>
+
+{{- end }}{{/* end main */ -}}

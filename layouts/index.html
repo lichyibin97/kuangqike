@@ -1,0 +1,54 @@
+{{ define "main" }}
+<main class="main custom-index">
+  <!-- 首屏 -->
+  <section class="hero-section">
+    <h1>你好，我是匡齐</h1>
+    <p>读书、用 AI、做事——每天把 AI 时代学到的、做出来的，写在这里。</p>
+    <div class="hero-actions">
+      <a href="/log/" class="btn btn-primary">看我每天在构建什么 &rarr;</a>
+      <a href="/posts/" class="btn btn-secondary">读文章</a>
+    </div>
+  </section>
+
+  <!-- 我做了什么 -->
+  <section class="what-i-did-section">
+    <h2>我做了什么</h2>
+    <div class="what-i-did-grid">
+      <a href="/services/" class="what-card">
+        <h3>① AI 落地咨询</h3>
+        <p>帮消费品牌把 AI 用进日常运营，从诊断到交付全程陪跑</p>
+      </a>
+      <div class="what-card">
+        <h3>② 公众号「匡齐说」</h3>
+        <p>把复杂问题想清楚再讲给你听</p>
+      </div>
+      <a href="/log/" class="what-card">
+        <h3>③ 这个网站本身</h3>
+        <p>用 AI 搭建、公开构建，过程都在构建日志里</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- 最新分享 -->
+  <section class="latest-stream-section">
+    <h2>最新分享</h2>
+    <div class="latest-stream">
+      {{ $stream := where site.RegularPages "Section" "in" (slice "posts" "log") }}
+      {{ range first 5 $stream.ByDate.Reverse }}
+      <div class="stream-item">
+        <span class="stream-date">{{ .Date.Format "2006-01-02" }}</span>
+        <span class="stream-tag {{ .Section }}">{{ if eq .Section "posts" }}文章{{ else }}日志{{ end }}</span>
+        <a href="{{ .Permalink }}" class="stream-title">{{ .Title }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <!-- 服务条 -->
+  <section class="service-banner-section">
+    <a href="/services/" class="service-banner">
+      企业想把 AI 真正用起来？从一次落地诊断开始 &rarr;
+    </a>
+  </section>
+</main>
+{{ end }}

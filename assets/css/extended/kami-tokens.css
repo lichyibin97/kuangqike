@@ -1,0 +1,51 @@
+/* ==================================================================
+   Kami 视觉系统 token 覆盖 · 暖纸 + 墨蓝 + 衬线
+   目的：让匡齐客博客跟简历/个人名片页共用同一套视觉 DNA
+   范围：仅覆盖浅色模式（Kami 本身没有对应的深色变体，暗色沿用 PaperMod 原有配色）
+   ================================================================== */
+
+@font-face {
+  font-family: "TsangerJinKai02";
+  src: url("https://cdn.jsdelivr.net/gh/AlfredoSequeworthy/TsangerJinKai02@main/TsangerJinKai02-W04.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "TsangerJinKai02";
+  src: url("https://cdn.jsdelivr.net/gh/AlfredoSequeworthy/TsangerJinKai02@main/TsangerJinKai02-W05.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --theme: #f5f4ed;        /* Kami --parchment */
+  --entry: #faf9f5;        /* Kami --ivory */
+  --primary: #141413;      /* Kami --near-black */
+  --secondary: #504e49;    /* Kami --olive */
+  --tertiary: #e8e6dc;     /* Kami --border */
+  --content: #3d3d3a;      /* Kami --dark-warm */
+  --code-bg: #faf9f5;
+  --border: #e8e6dc;
+  --kami-brand: #1B365D;   /* Kami --brand，PaperMod 原生没有这个变量，新增给链接/强调色用 */
+}
+
+body {
+  font-family: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
+               "Songti SC", "STSong", Georgia, serif;
+}
+
+a,
+.entry-header a,
+.post-title a {
+  color: var(--kami-brand);
+}
+a:hover {
+  color: #2D5A8A; /* Kami --brand-light */
+}
+
+.top-link,
+button.share {
+  background: var(--kami-brand);
+}

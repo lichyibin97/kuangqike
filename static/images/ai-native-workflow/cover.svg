@@ -1,0 +1,46 @@
+<svg width="900" height="383" viewBox="0 0 900 383" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="383" rx="0" fill="#F7F2E8"/>
+  <rect x="0" y="0" width="900" height="383" fill="url(#paper)"/>
+  <g opacity="0.35">
+    <path d="M70 72H830" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M70 156H830" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M70 240H830" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M70 324H830" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M160 38V344" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M330 38V344" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M500 38V344" stroke="#C7D8D0" stroke-width="1"/>
+    <path d="M670 38V344" stroke="#C7D8D0" stroke-width="1"/>
+  </g>
+
+  <g transform="translate(72 55)">
+    <rect x="0" y="0" width="756" height="273" rx="24" fill="#FFFDF8" stroke="#E5DED0" stroke-width="2"/>
+    <rect x="52" y="40" width="122" height="54" rx="15" fill="#EAF3FF" stroke="#BCD6FA"/>
+    <text x="113" y="75" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#1E5BC6">模型</text>
+    <path d="M197 67H252" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M243 58L252 67L243 76" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="275" y="40" width="122" height="54" rx="15" fill="#ECF7EF" stroke="#BFE4CA"/>
+    <text x="336" y="75" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#1F7A4C">流程</text>
+    <path d="M420 67H475" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M466 58L475 67L466 76" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="498" y="40" width="122" height="54" rx="15" fill="#FFF4E0" stroke="#ECD39C"/>
+    <text x="559" y="75" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#9D6A11">判断</text>
+    <path d="M643 67H682" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M673 58L682 67L673 76" stroke="#9FB4C8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="699" y="40" width="72" height="54" rx="15" fill="#F2F5F8" stroke="#D3DCE5"/>
+    <text x="735" y="75" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="25" font-weight="700" fill="#182235">人</text>
+
+    <text x="378" y="157" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="56" font-weight="800" fill="#172033">AI 原生团队</text>
+    <text x="378" y="211" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="36" font-weight="700" fill="#172033">真正要重写的是工作流</text>
+
+    <rect x="135" y="231" width="486" height="38" rx="19" fill="#172033"/>
+    <text x="378" y="256" text-anchor="middle" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif" font-size="21" font-weight="600" fill="#FFFDF8">哪些流程值得自动化，哪些应该直接停掉？</text>
+  </g>
+
+  <defs>
+    <radialGradient id="paper" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(730 65) rotate(142) scale(760 390)">
+      <stop stop-color="#E9F5F2"/>
+      <stop offset="0.56" stop-color="#F7F2E8" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#F7F2E8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>

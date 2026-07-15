@@ -1,8 +1,7 @@
 ---
 title: "AI 时代的岗位 FDE，我来讲清楚价值"
 date: 2026-06-03
-categories: ["合作"]
-tags: ["AI", "FDE", "企业AI", "合作"]
+tags: ["AI", "FDE", "企业AI"]
 summary: "企业真正缺的不是再多买一个 AI 工具，而是有人能把 AI 放进真实岗位、真实流程和真实指标里。"
 draft: false
 ShowReadingTime: false

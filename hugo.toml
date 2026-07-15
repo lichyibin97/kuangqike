@@ -1,44 +1,68 @@
 baseURL = "https://kuangqike.pages.dev/"
 locale = "zh-CN"
-title = "匡齐"
-theme = "PaperMod"
+title = "匡齐客"
+theme = "hugo-theme-stack"
+
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+
+[pagination]
+  pagerSize = 10
 
 [params]
+  mainSections = ["posts"]
   description = "运动、认知、做事，在世界上留下痕迹。"
   author = "匡齐"
-  defaultTheme = "light"
-  disableThemeToggle = true
-  ShowReadingTime = false
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = false
-  ShowCodeCopyButtons = false
-  disableSpecial1stPost = false
-  disableScrollToTop = false
-  comments = false
-  hidemeta = false
-  hideSummary = false
-  showtoc = false
-  tocopen = false
+
+  [params.colorScheme]
+    toggle = false
+    default = "light"
+
+  [params.sidebar]
+    emoji = ""
+    subtitle = "运动 · 认知 · 做事"
+    avatar = ""
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+
+  [params.comments]
+    enabled = false
+
+  [params.footer]
+    since = 2026
+    customText = ""
 
 [menu]
   [[menu.main]]
     name = "文章"
     url = "/posts/"
     weight = 1
+    [menu.main.params]
+      icon = "archives"
   [[menu.main]]
     name = "工具"
     url = "/works/"
     weight = 2
+    [menu.main.params]
+      icon = "link"
   [[menu.main]]
     name = "案例"
     url = "/services/"
     weight = 3
+    [menu.main.params]
+      icon = "user"
   [[menu.main]]
     name = "关于"
     url = "/about/"
     weight = 4
+    [menu.main.params]
+      icon = "user"
 
 [markup]
+  [markup.highlight]
+    noClasses = false
   [markup.goldmark.renderer]
     unsafe = true

@@ -1,31 +1,16 @@
-{{ define "main" }}
-<div class="custom-index">
-  <!-- 首屏：个人定位一句话 -->
-  <section class="hero-section">
-    <h1>运动、认知、做事，在世界上留下痕迹。</h1>
-  </section>
-
-  <!-- 文章卡片 -->
-  <section class="outlet-section">
-    <h2>最近写的</h2>
-    <p class="sec-lead">把判断留下来的地方。点进去可读全文；更多在文章列表。</p>
-    <div class="article-grid">
-      {{ $posts := where site.RegularPages "Section" "posts" }}
-      {{ range first 3 $posts.ByDate.Reverse }}
-      <a href="{{ .Permalink }}" class="article-card">
-        <span class="a-k">{{ .Date.Format "2006-01-02" }} · 文章</span>
-        <h3>{{ .Title }}</h3>
-        <span class="read">阅读 →</span>
-      </a>
-      {{ else }}
-      <div class="article-card">
-        <span class="a-k">—</span>
-        <h3>暂无文章</h3>
-        <span class="read">—</span>
-      </div>
-      {{ end }}
-    </div>
-    <p class="outlet-more"><a href="/posts/">查看全部文章</a> · <a href="/log/">构建日志</a></p>
-  </section>
+{{- define "main" }}
+<div class="home-hero">
+  <h1>运动、认知、做事，在世界上留下痕迹。</h1>
 </div>
-{{ end }}
+
+<section class="home-posts">
+  <h2>最近写的</h2>
+  {{- range first 5 (where .Site.RegularPages "Type" "posts") }}
+  <a class="post-row" href="{{ .RelPermalink }}">
+    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+    <span class="post-title">{{ .Title }}</span>
+  </a>
+  {{- end }}
+  <a class="more-link" href="{{ "/posts/" | relURL }}">全部文章 →</a>
+</section>
+{{- end }}

@@ -2,58 +2,43 @@ baseURL = "https://kuangqike.pages.dev/"
 locale = "zh-CN"
 title = "匡齐"
 theme = "PaperMod"
-[pagination]
-  pagerSize = 10
-enableRobotsTXT = true
-buildDrafts = false
 
 [params]
-  env = "production"
+  description = "运动、认知、做事，在世界上留下痕迹。"
   author = "匡齐"
-  description = "读书、用 AI、做事。把复杂问题想清楚，把想清楚的东西留下来。来者是客。"
   defaultTheme = "light"
   disableThemeToggle = true
-  ShowReadingTime = true
+  ShowReadingTime = false
   ShowShareButtons = false
   ShowPostNavLinks = true
   ShowBreadCrumbs = false
-  ShowCodeCopyButtons = true
-  ShowRssButtonInSectionTermList = true
-  ShowToc = false
-  dateFormat = "2006-01-02"
-
-  [params.homeInfoParams]
-    Title = "匡齐"
-    Content = "读书、用 AI、做事。把复杂问题想清楚，把想清楚的东西留下来。"
-
-  [[params.socialIcons]]
-    name = "rss"
-    url = "/index.xml"
+  ShowCodeCopyButtons = false
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = false
+  tocopen = false
 
 [menu]
   [[menu.main]]
     name = "文章"
     url = "/posts/"
     weight = 1
-
   [[menu.main]]
     name = "工具"
     url = "/works/"
     weight = 2
-
   [[menu.main]]
     name = "案例"
     url = "/services/"
     weight = 3
-
   [[menu.main]]
     name = "关于"
     url = "/about/"
     weight = 4
 
 [markup]
-  [markup.highlight]
-    style = "github"
-    lineNos = false
   [markup.goldmark.renderer]
     unsafe = true

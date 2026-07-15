@@ -1,22 +1,10 @@
 {{- if not (.Param "hideFooter") }}
 <footer class="site-footer">
   <nav class="footer-nav">
-    <a href="/posts/">
-      <span class="footer-nav-title">文章</span>
-      <span class="footer-nav-desc">把想清楚的东西写下来</span>
-    </a>
-    <a href="/works/">
-      <span class="footer-nav-title">工具</span>
-      <span class="footer-nav-desc">用得顺手的 Skill 和流程</span>
-    </a>
-    <a href="/services/">
-      <span class="footer-nav-title">案例</span>
-      <span class="footer-nav-desc">AI 落地的真实交付记录</span>
-    </a>
-    <a href="/about/">
-      <span class="footer-nav-title">关于</span>
-      <span class="footer-nav-desc">我是谁，为什么做这些</span>
-    </a>
+    <a href="{{ "/posts/" | relURL }}"><b>文章</b><span>把想清楚的东西写下来</span></a>
+    <a href="{{ "/works/" | relURL }}"><b>工具</b><span>用得顺手的 Skill 和流程</span></a>
+    <a href="{{ "/services/" | relURL }}"><b>案例</b><span>AI 落地的真实交付记录</span></a>
+    <a href="{{ "/about/" | relURL }}"><b>关于</b><span>我是谁，为什么做这些</span></a>
   </nav>
   <p class="footer-copy">© 匡齐</p>
 </footer>
@@ -37,12 +25,11 @@
 <script>
     let menu = document.getElementById('menu');
     if (menu) {
-        // Set the scroll position
         const scrollPosition = localStorage.getItem("menu-scroll-position");
         if (scrollPosition) {
             menu.scrollLeft = parseInt(scrollPosition, 10);
         }
-        
+
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -140,10 +127,8 @@
         } else if (container.parentNode.firstChild == container) {
             // td containing LineNos
         } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            // table containing LineNos and code
             codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
         } else {
-            // code blocks not having highlight as parent class
             codeblock.parentNode.appendChild(copybutton);
         }
     });

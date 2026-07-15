@@ -37,12 +37,12 @@ buildDrafts = false
     weight = 1
 
   [[menu.main]]
-    name = "构建日志"
-    url = "/log/"
+    name = "工具"
+    url = "/works/"
     weight = 2
 
   [[menu.main]]
-    name = "服务"
+    name = "案例"
     url = "/services/"
     weight = 3
 

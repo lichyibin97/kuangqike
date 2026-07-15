@@ -1,0 +1,40 @@
+{{- define "main" }}
+<div class="site-page">
+  <span class="sec-index">关于</span>
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="page-lead">{{ .Params.lead | default "占位：一句话自我介绍待确认。" }}</p>
+
+  <section class="site-block">
+    <span class="sec-index">01 — 经历框架</span>
+    <h2>背景（占位骨架）</h2>
+    <div class="tl-list">
+      <div class="tl-item">
+        <div class="tl-year">电商 6 年</div>
+        <div class="tl-body"><strong>占位：</strong>全渠道电商运营经历框架。具体平台与职责待填，不编造履历数字。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">AI 顾问</div>
+        <div class="tl-body"><strong>占位：</strong>帮消费品牌把 AI 工具变成团队真正用得起来的工作流。服务范围与边界待填。</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">当下</div>
+        <div class="tl-body"><strong>占位：</strong>写作（匡齐说 / 本站）+ 咨询陪伴。联系方式见服务页。</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-block">
+    <div class="placeholder-card">
+      <span class="placeholder-label">BIO PLACEHOLDER</span>
+      <h3>长简介占位</h3>
+      <p>正式 About 正文待董事长确认后写入。当前仅保留「6 年电商 + AI 顾问」经历框架，便于后续填肉。</p>
+    </div>
+  </section>
+
+  {{ with .Content }}
+  <section class="site-block post-content">
+    {{ . }}
+  </section>
+  {{ end }}
+</div>
+{{- end }}

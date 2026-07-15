@@ -1,0 +1,57 @@
+{{- define "main" }}
+<div class="site-page">
+  <span class="sec-index">服务</span>
+  <h1 class="page-title">{{ .Title }}</h1>
+  <p class="page-lead">{{ .Params.lead | default "先诊断，再陪跑。不跳步，按结果交付。" }}</p>
+
+  <section class="site-block">
+    <span class="sec-index">01 — 三阶梯</span>
+    <h2>怎么合作</h2>
+    <div class="svc-list">
+      <div class="svc-item">
+        <div class="svc-idx">01</div>
+        <div>
+          <h3>落地诊断</h3>
+          <p class="svc-fit">占位 · 适合：知道 AI 有用，不知从哪下手</p>
+          <p class="svc-desc">文案：梳理业务环节，标出可先落地的点，给出路线图。</p>
+          <p class="svc-deliver">占位交付：诊断报告 + 落地顺序（周期/价格待定）</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-idx">02</div>
+        <div>
+          <h3>落地陪跑</h3>
+          <p class="svc-fit">占位 · 适合：已决定推进，需要带着团队跑起来</p>
+          <p class="svc-desc">文案：按月陪跑，搭流程、带团队用熟、沉淀操作手册。</p>
+          <p class="svc-deliver">占位交付：可运行工作流 + 团队手册（报价按诊断结果）</p>
+        </div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-idx">03</div>
+        <div>
+          <h3>团队培训 <span class="tag-prep">筹备中</span></h3>
+          <p class="svc-fit">占位 · 适合：需要统一团队 AI 工作法</p>
+          <p class="svc-desc">文案：基于真实项目案例的培训课纲（尚未开放报名）。</p>
+          <p class="svc-deliver">占位交付：课纲与样章（筹备中，不作售卖承诺）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="site-block">
+    <span class="sec-index">02 — 案例</span>
+    <h2>珀克鲁案例</h2>
+    <div class="placeholder-card">
+      <span class="placeholder-label">CASE PLACEHOLDER</span>
+      <h3>珀克鲁 · 案例占位</h3>
+      <p>背景 / 问题 / 做法 / 结果 — 四段骨架待填充。禁止编造客户数据与增长数字；真实材料就绪后再替换本卡。</p>
+    </div>
+  </section>
+
+  {{ with .Content }}
+  <section class="site-block post-content">
+    {{ . }}
+  </section>
+  {{ end }}
+</div>
+{{- end }}

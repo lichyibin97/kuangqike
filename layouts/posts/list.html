@@ -1,0 +1,36 @@
+{{- define "main" }}
+<div class="site-page posts-plain-page">
+  <header class="page-header posts-plain-header">
+    <h1 class="page-title">{{ .Title | default "文章" }}</h1>
+    {{- with .Description }}
+    <p class="page-lead">{{ . | markdownify }}</p>
+    {{- end }}
+  </header>
+
+  {{- $paginator := .Paginate (.RegularPages.ByDate.Reverse) }}
+  <ul class="posts-plain">
+    {{- range $paginator.Pages }}
+    <li>
+      <a href="{{ .Permalink }}">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time><span class="posts-plain-sep">　</span><span class="posts-plain-title">{{ .Title }}</span>
+      </a>
+    </li>
+    {{- else }}
+    <li class="posts-plain-empty">暂无文章</li>
+    {{- end }}
+  </ul>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <footer class="page-footer">
+    <nav class="pagination">
+      {{- if $paginator.HasPrev }}
+      <a class="prev" href="{{ $paginator.Prev.URL | absURL }}">« 上一页</a>
+      {{- end }}
+      {{- if $paginator.HasNext }}
+      <a class="next" href="{{ $paginator.Next.URL | absURL }}">下一页 »</a>
+      {{- end }}
+    </nav>
+  </footer>
+  {{- end }}
+</div>
+{{- end }}

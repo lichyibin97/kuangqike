@@ -1,51 +1,101 @@
 /* ==================================================================
-   Kami 视觉系统 token 覆盖 · 暖纸 + 墨蓝 + 衬线
-   目的：让匡齐客博客跟简历/个人名片页共用同一套视觉 DNA
-   范围：仅覆盖浅色模式（Kami 本身没有对应的深色变体，暗色沿用 PaperMod 原有配色）
+   视觉 token · 黑/深灰为主体，红/陶土仅点缀（≤10%）
+   红：按钮、小标签、链接 hover；其余 ink / 深灰
    ================================================================== */
 
-@font-face {
-  font-family: "TsangerJinKai02";
-  src: url("https://cdn.jsdelivr.net/gh/AlfredoSequeworthy/TsangerJinKai02@main/TsangerJinKai02-W04.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "TsangerJinKai02";
-  src: url("https://cdn.jsdelivr.net/gh/AlfredoSequeworthy/TsangerJinKai02@main/TsangerJinKai02-W05.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --theme: #f5f4ed;        /* Kami --parchment */
-  --entry: #faf9f5;        /* Kami --ivory */
-  --primary: #141413;      /* Kami --near-black */
-  --secondary: #504e49;    /* Kami --olive */
-  --tertiary: #e8e6dc;     /* Kami --border */
-  --content: #3d3d3a;      /* Kami --dark-warm */
-  --code-bg: #faf9f5;
-  --border: #e8e6dc;
-  --kami-brand: #1B365D;   /* Kami --brand，PaperMod 原生没有这个变量，新增给链接/强调色用 */
+  --paper: #f6f3ec;
+  --paper-2: #efe9dd;
+  --ink: #1a1a1a;
+  --ink-body: #333333;
+  --ink-soft: #5b554c;
+  --ink-faint: #8a8377;
+  --line: #d9d2c4;
+  --accent: #b14a32;
+  --accent-deep: #943a25;
+  --serif: "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC", Georgia, serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  /* PaperMod 变量：主体走近黑，不用品牌红撑全站 */
+  --theme: var(--paper);
+  --entry: var(--paper-2);
+  --primary: var(--ink);
+  --secondary: var(--ink-soft);
+  --tertiary: var(--line);
+  --content: var(--ink-body);
+  --code-bg: #fff;
+  --border: var(--line);
+  --kami-brand: var(--ink);
+  --main-width: 860px;
+  --nav-width: 860px;
+  --gap: 24px;
 }
 
 body {
-  font-family: "TsangerJinKai02", "Source Han Serif SC", "Noto Serif CJK SC",
-               "Songti SC", "STSong", Georgia, serif;
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink-body);
+  line-height: 1.75;
 }
 
-a,
-.entry-header a,
-.post-title a {
-  color: var(--kami-brand);
+/* PaperMod 给 section/home 加 .list，默认背景走 --code-bg（白），
+   与单页 body 的 --paper 不一致；统一为首页 token */
+.list {
+  background: var(--paper);
 }
+
+h1, h2, h3, h4,
+.entry-header,
+.post-title,
+.page-header,
+.post-title a,
+.entry-header a {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+/* 默认链接近黑；红色只留给 hover（点缀） */
+a {
+  color: var(--ink);
+}
+
 a:hover {
-  color: #2D5A8A; /* Kami --brand-light */
+  color: var(--accent);
 }
 
+/* 顶栏：透明底，黑字，hover 陶土红点缀 */
+.header {
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+}
+
+.header .logo a,
+.header .menu a,
+.header .menu a span {
+  color: var(--ink);
+}
+
+.header .menu a span.active {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom: 1px solid var(--ink);
+  text-decoration: none;
+}
+
+.header .menu a:hover,
+.header .menu a:hover span,
+.header .logo a:hover {
+  color: var(--accent);
+}
+
+.header .nav-sep {
+  color: var(--ink-soft);
+}
+
+/* 回顶按钮保留陶土红点缀 */
 .top-link,
 button.share {
-  background: var(--kami-brand);
+  background: var(--accent);
 }

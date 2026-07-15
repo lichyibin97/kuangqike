@@ -3,7 +3,7 @@
         <div class="logo">
             {{- $label_text := (site.Params.label.text | default site.Title) }}
             {{- if site.Title }}
-            <a href="{{ "" | absLangURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
+            <a href="{{ "/" | relURL }}" accesskey="h" title="{{ $label_text }} (Alt + H)">
                 {{- if site.Params.label.icon }}
                 {{- $img := resources.Get site.Params.label.icon }}
                 {{- if $img }}
@@ -87,28 +87,28 @@
         {{- $currentPage := . }}
         <ul id="menu" class="menu">
             {{- range site.Menus.main }}
-            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
-            {{- $page_url:= $currentPage.Permalink | absLangURL }}
+            {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | relURL }}
+            {{- $page_url:= $currentPage.RelPermalink }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
             {{- if eq .Identifier "categories-dropdown" }}
             <li class="menu-item-has-children">
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }}">
-                    <span {{- if hasPrefix $page_url ((`/categories/`) | absLangURL) }} class="active" {{- end }}>
+                <a href="{{ .URL | relURL }}" title="{{ .Title | default .Name }}">
+                    <span {{- if hasPrefix $page_url ((`/categories/`) | relURL) }} class="active" {{- end }}>
                         {{- .Name -}}
                     </span>
                     <span class="menu-caret" aria-hidden="true">⌄</span>
                 </a>
                 <ul class="submenu" aria-label="分类">
-                    <li><a href="{{ "/posts/" | absLangURL }}">全部文章</a></li>
-                    <li><a href="{{ "/categories/ai资讯/" | absLangURL }}">AI资讯</a></li>
-                    <li><a href="{{ "/categories/ai工具/" | absLangURL }}">AI工具</a></li>
-                    <li><a href="{{ "/categories/思考/" | absLangURL }}">思考</a></li>
-                    <li><a href="{{ "/categories/合作/" | absLangURL }}">合作</a></li>
+                    <li><a href="{{ "/posts/" | relURL }}">全部文章</a></li>
+                    <li><a href="{{ "/categories/ai资讯/" | relURL }}">AI资讯</a></li>
+                    <li><a href="{{ "/categories/ai工具/" | relURL }}">AI工具</a></li>
+                    <li><a href="{{ "/categories/思考/" | relURL }}">思考</a></li>
+                    <li><a href="{{ "/categories/合作/" | relURL }}">合作</a></li>
                 </ul>
             </li>
             {{- else }}
             <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                <a href="{{ .URL | relURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                     <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
                         {{- .Pre }}

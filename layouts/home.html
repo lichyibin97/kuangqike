@@ -1,0 +1,52 @@
+{{- define "main" }}
+{{- $paginator := partial "helper/paginator.html" . -}}
+
+{{/* 1. 首屏：人生定位句（非咨询口号） */}}
+<section class="kq-hero">
+    <h1 class="kq-hero-title">运动、认知、做事，在世界上留下痕迹。</h1>
+    <p class="kq-hero-sub">这里是持续写下的思考与痕迹——关于 AI、工作方式与如何把想清楚的事留下来。</p>
+</section>
+
+{{/* 2. 近期思考：最近 3 篇，带一行摘要 */}}
+<section class="kq-section kq-thinking">
+    <h2 class="kq-section-title">近期思考</h2>
+    <div class="kq-thinking-list">
+        {{- range first 3 (where .Site.RegularPages "Type" "posts") }}
+        <a class="kq-think-row" href="{{ .RelPermalink }}">
+            <span class="kq-think-date">{{ .Date.Format "2006-01-02" }}</span>
+            <span class="kq-think-body">
+                <span class="kq-think-title">{{ .Title }}</span>
+                {{- with .Summary }}<span class="kq-think-sum">{{ . | plainify | truncate 48 }}</span>{{ end }}
+            </span>
+        </a>
+        {{- end }}
+    </div>
+    <a class="kq-more" href="{{ "/posts/" | relURL }}">全部文章 →</a>
+</section>
+
+{{/* 3. 日记 / 留下的东西 */}}
+<section class="kq-section kq-traces">
+    <h2 class="kq-section-title">日记 / 留下的东西</h2>
+    <p class="kq-traces-desc">不是一夜成型的作品，而是一天一天写下的痕迹。想法、判断、踩过的坑，都先记在这里，再慢慢长成文章。</p>
+    <a class="kq-more" href="{{ "/posts/" | relURL }}">翻翻这些痕迹 →</a>
+</section>
+
+{{/* 4. 作品 / 工具（轻） */}}
+<section class="kq-section kq-works">
+    <h2 class="kq-section-title">作品 / 工具</h2>
+    <p class="kq-traces-desc">顺手做的一些小东西——自动化脚本、智能体、把重复流程沉淀成的 Skill。</p>
+    <a class="kq-more" href="{{ "/works/" | relURL }}">看看做了什么 →</a>
+</section>
+
+{{/* 5. 底部轻支线：AI 咨询仅文字链，无 CTA 无价格 */}}
+<section class="kq-section kq-side-line">
+    <p class="kq-side-text">近期也在帮消费品牌把 AI 真正用进工作流——落地诊断与陪跑。</p>
+    <a class="kq-side-link" href="{{ "/services/" | relURL }}">了解 AI 落地陪跑 →</a>
+</section>
+
+{{- partial "footer/footer" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

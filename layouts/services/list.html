@@ -1,0 +1,56 @@
+{{ define "main" }}
+    <header>
+        <h3 class="section-title">
+            {{ if eq .Parent (.GetPage "/") }}
+                {{ T "list.section" }}
+            {{ else }}
+                {{ .Parent.Title }}
+            {{ end }}
+        </h3>
+
+        <div class="section-card">
+            <div class="section-details">
+                {{ if eq .CurrentSection .FirstSection }}
+                    <h3 class="section-count">{{ T "list.page" (len .Sections) }}</h3>
+                {{ else }}
+                    <h3 class="section-count">{{ T "list.page" (len .RegularPages) }}</h3>
+                {{ end }}
+                <h1 class="section-term">{{ .Title }}</h1>
+                {{ with .Params.description }}
+                    <h2 class="section-description">{{ . }}</h2>
+                {{ end }}
+            </div>
+        </div>
+    </header>
+
+    {{/* 子栏目正文：服务方式 / 服务初衷 */}}
+    {{ with .Content }}
+        <section class="article-content">
+            {{ . }}
+        </section>
+    {{ end }}
+
+    {{ if eq .CurrentSection .FirstSection }}
+        {{/* 案例首页：三个入口统一为横向列表，不走 Stack 子栏目方块 */}}
+        <section class="article-list--compact">
+            {{ range .Sections.ByWeight }}
+                {{ partial "article-list/compact" . }}
+            {{ end }}
+        </section>
+    {{ else }}
+        {{/* 客户案例列表等：展示下属详情页 */}}
+        {{ with .RegularPages }}
+            <section class="article-list--compact">
+                {{ range .ByWeight }}
+                    {{ partial "article-list/compact" . }}
+                {{ end }}
+            </section>
+        {{ end }}
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "homepage") }}
+{{ end }}

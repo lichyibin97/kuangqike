@@ -1,0 +1,148 @@
+/* ==================================================================
+   匡齐客 · 首页收口（写作者主轴 · 咨询轻支线）
+   冷白底（对齐 Stack 默认），不改 themes/ 源码。
+   结构保留；暖纸 / 陶土红已撤。
+   ================================================================== */
+
+:root {
+  --paper: #f5f5fa;
+  --paper-2: #ffffff;
+  --ink: #1a1a1a;
+  --ink-body: #333333;
+  --ink-soft: #666666;
+  --ink-faint: #999999;
+  --line: #e5e5ea;
+  --accent: #2c3e50;
+  --accent-deep: #1a252f;
+  --serif: "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC", Georgia, serif;
+  --sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  /* 覆盖 Stack 主题变量，全站统一冷白 */
+  --body-background: #f5f5fa;
+  --card-background: #ffffff;
+}
+
+body {
+  background: var(--body-background);
+  font-family: var(--sans);
+}
+
+h1, h2, h3, h4,
+.article-title,
+.section-title {
+  font-family: var(--serif);
+  color: var(--ink);
+}
+
+a { color: var(--ink); }
+a:hover { color: var(--accent); }
+
+.site-name a,
+#main-menu a span { color: var(--ink); }
+#main-menu a:hover span,
+.site-name a:hover { color: var(--accent); }
+
+.left-sidebar {
+  background: var(--body-background);
+}
+
+/* ============ 首页五块（layouts/home.html 局部类） ============ */
+
+.kq-hero {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+.kq-hero-title {
+  font-family: var(--serif);
+  font-size: 34px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 16px;
+  letter-spacing: 0.01em;
+}
+.kq-hero-sub {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+.kq-section {
+  padding: 40px 0;
+  border-bottom: 1px solid var(--line);
+}
+.kq-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  margin: 0 0 20px;
+  letter-spacing: 0.04em;
+}
+.kq-section-title::before {
+  content: "";
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.kq-thinking-list { margin: 0; }
+.kq-think-row {
+  display: flex;
+  gap: 20px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+}
+.kq-think-row:last-child { border-bottom: none; }
+.kq-think-row:hover .kq-think-title { color: var(--accent); }
+.kq-think-date {
+  color: var(--ink-soft);
+  font-size: 13px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.kq-think-body { display: flex; flex-direction: column; gap: 2px; }
+.kq-think-title { font-size: 16px; font-family: var(--serif); }
+.kq-think-sum { font-size: 13px; color: var(--ink-faint); }
+
+.kq-traces-desc {
+  font-size: 15px;
+  color: var(--ink-body);
+  line-height: 1.85;
+  max-width: 640px;
+  margin: 0 0 14px;
+}
+.kq-side-text {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 8px;
+}
+
+.kq-more,
+.kq-side-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+}
+.kq-more:hover,
+.kq-side-link:hover { color: var(--accent-deep); }
+
+.kq-side-line {
+  border-bottom: none;
+  padding: 32px 0 8px;
+}
+
+@media (max-width: 768px) {
+  .kq-hero { padding: 40px 0 28px; }
+  .kq-hero-title { font-size: 26px; }
+  .kq-think-row { flex-direction: column; gap: 4px; }
+}
